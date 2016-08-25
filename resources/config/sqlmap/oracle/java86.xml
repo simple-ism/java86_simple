@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="java86.DAO">
+   
+  
+  
+  <insert id="insertFine" parameterType="fvo">
+  	insert into java86_fine (fine_no,mem_id,fine_amount,fine_detail)
+  	values (s86_java86_fine.nextVal,#{memId},#{fineAmount},#{fineDetail})
+   
+  </insert>
+  
+  
+  <delete id="deleteFine" parameterType="int">
+  		delete from java86_fine
+  		where fine_no=#{findNo}
+  
+  </delete>
+  
+  <update id="updateFine" parameterType="fvo">
+  	update java86_fine
+  	set fine_amount=#{fineAmount},fine_detail=#{fineDetail}
+  	where fine_no=#{fineNo}
+  
+  </update>
+  
+  <select id="updateList" parameterType="int" resultMap="fineMap">
+  	select *
+  	from java86_fine
+  	where fine_no=#{fineNo}
+  
+  </select>
+  
+  <delete id="deleteAllFine">
+  	delete from java86_fine
+  </delete>
+  
+  <resultMap type="fvo" id="fineMap">
+  	<result column="fine_No" property="fineNo" />
+  	<result column="mem_Id" property="memId" />
+  	<result column="mem_name" property="memName" />
+  	<result column="fine_Amount" property="fineAmount" />
+  	<result column="fine_Detail" property="fineDetail" />
+  	<result column="fine_Date" property="fineDate" />
+  
+  
+  
+  </resultMap>
+    
+  <select id="selectFine" resultMap="fineMap">
+  	select	fine_no,e.mem_id,m.mem_name,fine_amount,fine_detail,fine_date
+  	from java86_fine e, java86_member m
+  	where e.mem_id=m.mem_id
+  	order by fine_no
+  
+  </select>
+  
+  <resultMap  type="member" id="memberMap">
+  	<result column="MEM_NAME" property="memName"/>
+  	<result column="MEM_ID" property="memId"/>
+  	<result column="MEM_PASSWORD" property="memPassword"/>
+  	<result column="MEM_EMAIL_ID" property="memEmailId"/>
+  	<result column="MEM_EMAIL_DOMAIN" property="memEmailDomain"/>
+  	<result column="MEM_TEL" property="memTel"/>
+  	<result column="MEM_REG_DATE" property="memRegDate"/>
+  	<result column="IMG_REAL_NAME" property="imgRealName"/>
+  
+  </resultMap>
+  
+  <select id="selectNameId" parameterType="string" resultMap="memberMap">
+  			select *
+  			from java86_member
+  			where mem_name= #{memName} 
+  </select>
+
+    
+    
+    
+</mapper>
