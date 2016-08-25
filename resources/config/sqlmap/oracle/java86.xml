@@ -74,7 +74,27 @@
   			where mem_name= #{memName} 
   </select>
 
+<!--  ===== 이후부터 Message 파트 ======================  -->
+    <resultMap type="msvo" id="MessageMap">
+    	<result column="m_recv_id" property="mRecvId"/>
+    	<result column="m_title" property="mTitle"/>
+    	<result column="m_content" property="mContent"/>
+    	<result column="m_send_id" property="mSendId"/>
+    	<result column="m_reg_date" property="mRegDate"/>
+    	<result column="m_recv_del_yn" property="mRecvDelYN"/>
+    	<result column="m_send_del_yn" property="mSendDelYN"/>
+    	<result column="m_read_yn" property="mReadYN"/>
+    	<result column="m_no" property="mNo"/>
+    
+    </resultMap>
     
     
+    <select id="selectRecvM" parameterType="string" resultMap="MessageMap">
+    	select *
+    	from java86_message
+    	where m_recv_id=#{memId}
+    	order by m_no desc;
+        
+    </select>
     
 </mapper>

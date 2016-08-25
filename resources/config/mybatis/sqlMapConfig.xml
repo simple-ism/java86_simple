@@ -10,6 +10,7 @@
 	<typeAliases>
 		<typeAlias alias="fvo" type="java86.VO.FineVO" />
 		<typeAlias alias="member" type="java86.VO.MemberVO" />
+		<typeAlias alias="msvo" type="java86.VO.MessageVO" />
 	</typeAliases>
 	
 	<environments default="development">
