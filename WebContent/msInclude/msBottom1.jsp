@@ -1,8 +1,9 @@
 	<div> 
-		<table width="100%" height="20%">
+		<table width="500px" height="75px">
 			<tr>
-				<td width = "90%"><a href="${pageContext.request.contextPath}/MessageWrite"><img align="right" src="${pageContext.request.contextPath}/images/Write.png"/></a></td>
-				<td width = "10%" style="text-align: center;"><img   src="${pageContext.request.contextPath}/images/memo_delete.gif"/></td>
+				<td width = "450"><a href="${pageContext.request.contextPath}/MessageWrite">
+					<img align="right" src="${pageContext.request.contextPath}/images/Write.png"/></a></td>
+				<td width = "50" style="text-align: center;"><img   src="${pageContext.request.contextPath}/images/memo_delete.gif"/></td>
 			</tr>
 		</table>
 		

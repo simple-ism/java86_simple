@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
+import java86.VO.FineVO;
 import java86.VO.MessageVO;
 import util.MyAppSqlConfig;
 
@@ -17,6 +18,11 @@ public class MessageDAO {
 		List<MessageVO> msList = sqlMapping.selectList("java86.DAO.selectRecvM",memId);
 		return msList;
 	}
+	
+	public void insertMessage(MessageVO msvo) {
+		sqlMapping.insert("java86.DAO.insertFine", msvo);
+		sqlMapping.commit();
+	} 
 
 
 }

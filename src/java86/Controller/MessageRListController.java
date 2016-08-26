@@ -23,7 +23,7 @@ public class MessageRListController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		MessageDAO msDao = new MessageDAO();
 		HttpSession session = request.getSession();
-		MemberVO mvo = (MemberVO)session.getAttribute("mvo");
+		MemberVO mvo = (MemberVO)session.getAttribute("memberVO");
 		
 		List<MessageVO> msList = new ArrayList<>();
 		msList = msDao.selectRecvM(mvo.getMemId());

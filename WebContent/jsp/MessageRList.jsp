@@ -7,7 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-/*   table,tr,td {border: 1px solid black;} */
+	*{ margin: 0 auto;}
+  table,tr,td { padding: 0px; border-collapse:collapse;} 
 </style>
 </head>
 <body>
@@ -18,17 +19,17 @@
 	<hr color="#CACACA">
 	</div>	
 	<div class="content">
-		<table width="100%" height="60%">
-			<tr>
-				<td width="5%"><img  align="left" src="${pageContext.request.contextPath}/images/memo_c.gif"/></td>
-				<td width="75%"><img  align="left" src="${pageContext.request.contextPath}/images/memo_subject.gif"/></td>
-				<td width="10%"><img  align="left" src="${pageContext.request.contextPath}/images/memo_from.gif"/></td>
-				<td width="10%"><img  align="left" src="${pageContext.request.contextPath}/images/memo_date.gif"/></td>
+		<table width="500px" height="20px" cellpadding="0" cellspacing="0" style="table-layout: fixed;" border="0">
+			<tr >
+				<td width="50px" ><img  align="left" src="${pageContext.request.contextPath}/images/memo_c.gif"/></td>
+				<td width="300px" ><img  align="left" src="${pageContext.request.contextPath}/images/memo_subject.gif"/></td>
+				<td width="75px" ><img  align="left" src="${pageContext.request.contextPath}/images/memo_from.gif"/></td>
+				<td width="75px" ><img  align="left" src="${pageContext.request.contextPath}/images/memo_date.gif"/></td>
 				
 			</tr>
 		</table>
 		<hr color="#CACACA">
-		
+		<table width="500px" height="280px" cellpadding="0" cellspacing="0" style="table-layout: fixed;" border="0">
 		<c:if test="${!empty msList }">
 			<c:forEach var="msvo" items="${msList}">
 				<tr>
@@ -39,7 +40,7 @@
 				</tr>	
 			</c:forEach>
 		</c:if>
-		
+		</table>
 	</div>
 	<div class="footer">
 	<hr color="#CACACA">

@@ -18,7 +18,7 @@
 			</tr>
 		</table>
 	</form>
-	<form action="${pageContext.request.contextPath}/FineWrite" method="post">
+	<form action="${pageContext.request.contextPath}/MessageWrite" method="post">
 		<table>
 			<tr>
 				<th>이름</th>		

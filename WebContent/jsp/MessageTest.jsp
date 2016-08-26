@@ -12,6 +12,8 @@
 	<script>
 		function start(){
 			window.open("../jsp/MessageRList.jsp", "pop", "width=500, height=500");
+// 			window.open("../MessageRList", "pop", "width=500, height=500");
+
 			
 		};
 	</script>
