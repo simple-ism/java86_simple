@@ -1,7 +1,7 @@
 	<div> 
 		<table width="500px" height="65px">
 			<tr>
-				<td width = "80%"><img src="${pageContext.request.contextPath}/images/memo_top.gif"/> </td>
+				<td width = "80%"><img src="${pageContext.request.contextPath}/images/memo_topright_send.gif"/> </td>
 				<td width = "20%"><img align="right"  src="${pageContext.request.contextPath}/images/memo_close.gif"/></td>
 			</tr>
 		</table>

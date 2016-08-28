@@ -77,9 +77,11 @@
 <!--  ===== 이후부터 Message 파트 ======================  -->
     <resultMap type="msvo" id="MessageMap">
     	<result column="m_recv_id" property="mRecvId"/>
+    	<result column="m_recv_name" property="mRecvName"/>
     	<result column="m_title" property="mTitle"/>
     	<result column="m_content" property="mContent"/>
     	<result column="m_send_id" property="mSendId"/>
+    	<result column="m_send_name" property="mSendName"/>
     	<result column="m_reg_date" property="mRegDate"/>
     	<result column="m_recv_del_yn" property="mRecvDelYN"/>
     	<result column="m_send_del_yn" property="mSendDelYN"/>
@@ -97,7 +99,28 @@
         
     </select>
     
+    <select id="selectSendM" parameterType="string" resultMap="MessageMap">
+    	select *
+    	from java86_message
+    	where m_send_id=#{memId}
+    	order by m_no desc;
+        
+    </select>
     
     
+  <insert id="insertMessage" parameterType="msvo">
+  	insert into java86_fine (m_no,m_recv_id,m_recv_name, m_send_id,m_send_name, m_title,m_content)
+  	values (s86_java86_Message.nextVal,#{mRecvId},#{mRecvName},#{mSendId},#{mSendName},#{mTitle},#{mContent})
+   
+  </insert>
+    
+    <select id="selectRDetail" parameterType="int" parameterMap="MessageMap" >
+    	select *
+    	from java86_message
+    	where m_no=#{mNo}
+    	
+    
+    </select>
+ 
     
 </mapper>

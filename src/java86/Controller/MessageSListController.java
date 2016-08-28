@@ -16,8 +16,8 @@ import java86.DAO.MessageDAO;
 import java86.VO.MemberVO;
 import java86.VO.MessageVO;
 
-@WebServlet("/MessageRList")
-public class MessageRListController extends HttpServlet {
+@WebServlet("/MessageSList")
+public class MessageSListController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -26,12 +26,11 @@ public class MessageRListController extends HttpServlet {
 		MemberVO mvo = (MemberVO)session.getAttribute("memberVO");
 		
 		List<MessageVO> msList = new ArrayList<>();
-		msList = msDao.selectRecvM(mvo.getMemId());
-	
+		msList = msDao.selectSendM(mvo.getMemId());
 		
 		request.setAttribute("msList", msList);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/jsp/MessageRList.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/jsp/MessageSList.jsp");
 		rd.forward(request, response);
 		
 	}

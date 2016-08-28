@@ -16,42 +16,43 @@
 </head>
 <body>
 <div class="container">
+	<form action="${pageContext.request.contextPath}/MassageWrite" method="post">
 	<div class="header">
 		
 		<%@ include file="/msInclude/msTopW.jsp" %>
 	<hr color="#CACACA">
 	</div>	
 	<div class="content" >
-	<form action="${pageContext.request.contextPath}/MassageWrite" method="post">
-		<input type="hidden" name="mSendId" value="${session..memId}" />
-		<input type="hidden" name="mRecvId" value="${request.memId}" />
-		<input type="hidden" name="mRecvName" value="${session.memName}" />
+		<input type="hidden" name="memId" value="${msvo.mRecvId}" />
+		<input type="hidden" name="memName" value="${msvo.mRecvName}" />
 		<table width="500px" height="300px" cellpadding="0" cellspacing="0" style="table-layout: fixed;" border="0">
 			<tr>
-				<td width="30%">이름</td>
+				<td width="30%">받은사람</td>
 				<td width="70%">
-
-				<input type="text" name="mRecvName" value="${request.memName}" readonly/>
-				<input type="button" value="검색" 
-				onclick="location='${pageContext.request.contextPath}/MessageSearch'"/>
+				<a href="${pageContext.request.contextPath}/MessageWrite?mSendId=${msvo.mRecvId}&memName=${msvo.mRecvName}"><c:out value="${msvo.mRecvName}"/></a>
 				</td>
 			</tr>
 			<tr>
 				<td width="40%">제목</td>
-				<td width="70%"><input type="text" name="mTitle" size="38px"/></td>
+				<td width="60%"><c:out value="${msvo.mTitle}"/></td>
 			</tr>
 			<tr>
 				<td width="30%">내용</td>
-				<td width="70%"><textarea rows="10%" cols="40px" name="mContent"></textarea></td>
+				<td width="70%"><c:out value="${msvo.mContent}"/></td>
+			</tr>
+			<tr>
+				<td width="30%">보낸시간</td>
+				<td width="70%"><c:out value="${msvo.mRegDate}"/></td>
 			</tr>
 		</table>
 		
-		</form>
+		
 	</div>
 	<div class="footer">
 	<hr color="#CACACA">
 		<%@ include file="/msInclude/msBottom1.jsp" %>
 	</div>
+		</form>
 </div>
 </body>
 </html>

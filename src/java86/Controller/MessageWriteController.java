@@ -17,6 +17,11 @@ public class MessageWriteController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if(request.getParameter("mSendId")!= null){
+			request.setAttribute("memId",request.getParameter("mSendId") );
+			request.setAttribute("memName",request.getParameter("memName") );
+		}
+		
 		RequestDispatcher rd = request.getRequestDispatcher("/jsp/MessageWrite.jsp");
 		rd.forward(request, response);
 	}
@@ -30,18 +35,22 @@ public class MessageWriteController extends HttpServlet {
 		if(request.getParameter("mContent") != null){
 			
 			
-			msvo.setmSendId(request.getParameter("memId"));
+			msvo.setmRecvId(request.getParameter("mRecvId"));
+			msvo.setmRecvName(request.getParameter("mRecvName"));
+			msvo.setmSendId(request.getParameter("mSendId"));
+			msvo.setmSendName(request.getParameter("mSendName"));
 			msvo.setmTitle(request.getParameter("mTitle"));
 			msvo.setmContent(request.getParameter("mContent"));
 			
 			
-			msDao.(msvo);
+			msDao.insertMessage(msvo);
 			
-			response.sendRedirect(request.getContextPath()+"/FineList");
+			response.sendRedirect(request.getContextPath()+"/MessageRList");
 
 			return;
 			}
 		request.setAttribute("memId", (request.getParameter("memId")));
+		request.setAttribute("memName", (request.getParameter("memName")));
 				
 		
 

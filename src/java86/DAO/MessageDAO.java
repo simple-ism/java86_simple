@@ -20,9 +20,18 @@ public class MessageDAO {
 	}
 	
 	public void insertMessage(MessageVO msvo) {
-		sqlMapping.insert("java86.DAO.insertFine", msvo);
+		sqlMapping.insert("java86.DAO.insertMessage", msvo);
 		sqlMapping.commit();
 	} 
+	public List<MessageVO> selectSendM(String memId ) {
+		List<MessageVO> msList = sqlMapping.selectList("java86.DAO.selectSendM",memId);
+		return msList;
+	}
+	public MessageVO selectRDetail(int mNo){
+		MessageVO msvo = sqlMapping.selectOne("java86.DAO.selectRDetail", mNo);
+		return msvo;
+	}
+	
 
 
 }

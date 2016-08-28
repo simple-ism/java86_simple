@@ -15,7 +15,7 @@
 <div class="container">
 	<div class="header">
 		
-		<%@ include file="/msInclude/msTop1.jsp" %>
+		<%@ include file="/msInclude/msTop2.jsp" %>
 	<hr color="#CACACA">
 	</div>	
 	<div class="content">
@@ -34,8 +34,8 @@
 			<c:forEach var="msvo" items="${msList}">
 				<tr>
 					<td><input type="checkbox" name="msDelNo" value="${msvo.mNo}"/></td>
-					<td><a href="${pageContext.request.contextPath}/MessageRDetail?mNo=${msvo.mNo}"><c:out value="${msvo.mTitle}"/></a></td>
-					<td><c:out value="${msvo.mSendId}"/></td>
+					<td><a href="${pageContext.request.contextPath}/MessageSDetail?mNo=${msvo.mNo}"><c:out value="${msvo.mTitle}"/></a></td>
+					<td><c:out value="${msvo.mRecvId}"/></td>
 					<td><c:out value="${msvo.mRegDate}"/></td>
 				</tr>	
 			</c:forEach>

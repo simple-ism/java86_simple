@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java86.DAO.FineDAO;
 import java86.VO.MemberVO;
 
-@WebServlet("/FineSearch")
+@WebServlet("/MessageSearch")
 public class MessageSearchController extends HttpServlet{
 	
 	

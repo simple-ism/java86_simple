@@ -21,9 +21,11 @@ select * from user_sequences;
   	
 create table java86_message(
 	m_recv_id varchar2(40) not null,
+	m_recv_name varchar2(40) not null,
 	m_title	varchar2 (200) not null,
 	m_content varchar2(200) not null,
 	m_send_id varchar2(40) not null,
+	m_send_name varchar2(40) not null,
 	m_reg_date Date default sysdate,
 	m_recv_del_yn char(5) default 'n',
 	m_send_del_yn char(5) default 'n',
@@ -32,3 +34,8 @@ create table java86_message(
 );
 
 drop table java86_message;
+
+select * from java86_message;
+
+create sequence s86_java86_Message;
+

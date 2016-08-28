@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="${pageContext.request.contextPath}/FineSearch" method="post">
+	<form action="${pageContext.request.contextPath}/MessageSearch" method="post">
 		<table>
 			<tr>
 				<th>이름</th>
@@ -29,6 +29,7 @@
 			<c:if test = "${!empty mList}">
 			<c:forEach var="m" items="${mList}">
 				<input type="hidden" name="memId" value="${m.memId}"/>
+				<input type="hidden" name="memName" value="${m.memName}"/>
 			<tr>
 				
 				<th>"${m.memName}"</th>

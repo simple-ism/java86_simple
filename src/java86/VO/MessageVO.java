@@ -4,9 +4,11 @@ import java.util.Date;
 
 public class MessageVO {
 	private String mRecvId;
+	private String mRecvName;
 	private String mTitle;
 	private String mContent;
 	private String mSendId;
+	private String mSendName;
 	private Date mRegDate;
 	private String mRecvDelYN;
 	private String mSendDelYN;
@@ -15,6 +17,18 @@ public class MessageVO {
 	
 	
 	
+	public String getmRecvName() {
+		return mRecvName;
+	}
+	public void setmRecvName(String mRecvName) {
+		this.mRecvName = mRecvName;
+	}
+	public String getmSendName() {
+		return mSendName;
+	}
+	public void setmSendName(String mSendName) {
+		this.mSendName = mSendName;
+	}
 	public int getmNo() {
 		return mNo;
 	}
